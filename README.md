@@ -6,7 +6,7 @@
 
 * DWallet is an Ethereum smart contract allowing users to send coins with names and messages, view transaction details, and find transaction addresses.
 
-### Features
+## Features
 
 - Connect to MetaMask wallet
 - Display user account address
@@ -50,24 +50,27 @@ contract DWallet {
 }
 ```
 
+
 1. **Install Dependencies:**
+ 
  ```
    npm install
  ```
-2.Open two additional terminals in VS Code.
-
-3.In the second terminal, start the Hardhat local blockchain:
  ```
 npx hardhat node
  ```
-4.In the third terminal, deploy the contract to the local blockchain:
+2. Create an another terminal, deploy the contract to the local blockchain:
  ```
 npx hardhat run --network localhost scripts/deploy.js
  ```
-5.In the first terminal, start the front-end application:
+ ```
+npx hardhat run --network localhost scripts/fulldeploy.js
+ ```
+3. Then run this command in the terminal:
  ```
 npm run dev
  ```
+
 ## Customization
 
 * Customize the UI elements, styles, and behavior of the DWallet component by modifying JSX, CSS, and event handlers to fit your design and functionality needs.
