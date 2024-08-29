@@ -86,7 +86,7 @@ npm run dev
 
 **Dev Sagar**  
 
-GitHub: [DevSGitub2](https://github.com/DevSGitub2)
+GitHub: [DevSGithub2](https://github.com/DevSGitub2)
 
 ### Video Walkthrough
 
