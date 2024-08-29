@@ -1,10 +1,10 @@
 # DWallet Project
 
-This project demonstrates the implementation of a smart token using Solidity on Remix IDE, showcasing the use of require, assert, and revert statements to enforce conditions, ensure consistency, and manage execution flow.
+* This project demonstrates the implementation of a smart token using Solidity on Remix IDE, showcasing the use of require, assert, and revert statements to enforce conditions, ensure consistency, and manage execution flow.
 
 ## Description
 
-DWallet is an Ethereum smart contract allowing users to send coins with names and messages, view transaction details, and find transaction addresses.
+* DWallet is an Ethereum smart contract allowing users to send coins with names and messages, view transaction details, and find transaction addresses.
 
 ### Features
 
@@ -16,7 +16,39 @@ DWallet is an Ethereum smart contract allowing users to send coins with names an
 
 ## Getting Started
 
-### Setup
+### Code
+```
+
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.6.12 <0.9.0;
+
+contract DWallet {
+    struct Coin {
+        string name;
+        string message;
+        uint256 timestamp;
+        address from;
+    }
+
+    Coin[] coins;
+    address payable owner;
+
+    constructor() {
+        owner = payable(msg.sender);
+    }git commit -m "Your commit message"
+
+
+    function sendCoin(string memory name, string memory message) public payable {
+        require(msg.value > 0, "Please send an amount greater than 0 ether");
+        owner.transfer(msg.value);
+        coins.push(Coin(name, message, block.timestamp, msg.sender));
+    }
+
+    function getCoins() public view returns (Coin[] memory) {
+        return coins;
+    }
+}
+```
 
 1. **Install Dependencies:**
  ```
@@ -38,7 +70,7 @@ npm run dev
  ```
 ## Customization
 
-Customize the UI elements, styles, and behavior of the DWallet component by modifying JSX, CSS, and event handlers to fit your design and functionality needs.
+* Customize the UI elements, styles, and behavior of the DWallet component by modifying JSX, CSS, and event handlers to fit your design and functionality needs.
 
 ### Interacting with Front-End
 
